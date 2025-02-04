@@ -27,11 +27,20 @@ async def channel_post(client: Client, message: Message):
     # Check if the user is a member of the required channels
     is_member = await check_membership(client, message.from_user.id)
     if not is_member:
+        buttons = [
+            [
+                InlineKeyboardButton(text="⚡Join Channel 1⚡", url=client.invitelink),
+            ],
+            [
+                InlineKeyboardButton(text="⚡Join Channel 2⚡", url=client.invitelink2),
+            ]
+        ]
+        reply_markup = InlineKeyboardMarkup(buttons)
+
         await reply_text.edit_text(
             "You need to join the following channels to generate a link:\n"
-            f"- [Channel 1]({client.invitelink})\n"
-            f"- [Channel 2]({client.invitelink2})\n"
-            "Please join them and try again."
+            "Please join them using the buttons below and try again.",
+            reply_markup=reply_markup
         )
         return
 
@@ -56,12 +65,6 @@ async def channel_post(client: Client, message: Message):
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
-    converted_id = message.id * abs(client.db_channel.id)
-    string = f"get-{converted_id}"
-    base64_string = await encode(string)
-    link = f"https://t.me/{client.username}?start={base64_string}"
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
-    
     try:
         await message.edit_reply_markup(reply_markup)
     except Exception as e:
