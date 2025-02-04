@@ -29,8 +29,8 @@ async def channel_post(client: Client, message: Message):
     if not is_member:
         await reply_text.edit_text(
             "You need to join the following channels to generate a link:\n"
-            f"- [Channel 1](https://t.me/{FORCE_SUB_CHANNEL_1})\n"
-            f"- [Channel 2](https://t.me/{FORCE_SUB_CHANNEL_2})\n"
+            f"- [Channel 1]({client.invitelink})\n"
+            f"- [Channel 2]({client.invitelink2})\n"
             "Please join them and try again."
         )
         return
@@ -56,12 +56,6 @@ async def channel_post(client: Client, message: Message):
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
-
-@Bot.on_message(filters.channel & filters.incoming & filters.chat(CHANNEL_ID))
-async def new_post(client: Client, message: Message):
-    if DISABLE_CHANNEL_BUTTON:
-        return
-
     converted_id = message.id * abs(client.db_channel.id)
     string = f"get-{converted_id}"
     base64_string = await encode(string)
