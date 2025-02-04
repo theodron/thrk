@@ -44,6 +44,7 @@ async def channel_post(client: Client, message: Message):
         )
         return
 
+    # If the user is a member, proceed to generate the link
     try:
         post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
     except FloodWait as e:
@@ -65,6 +66,18 @@ async def channel_post(client: Client, message: Message):
 
     if not DISABLE_CHANNEL_BUTTON:
         await post_message.edit_reply_markup(reply_markup)
+
+@Bot.on_message(filters.channel & filters.incoming & filters.chat(CHANNEL_ID))
+async def new_post(client: Client, message: Message):
+    if DISABLE_CHANNEL_BUTTON:
+        return
+
+    converted_id = message.id * abs(client.db_channel.id)
+    string = f"get-{converted_id}"
+    base64_string = await encode(string)
+    link = f"https://t.me/{client.username}?start={base64_string}"
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
+    
     try:
         await message.edit_reply_markup(reply_markup)
     except Exception as e:
