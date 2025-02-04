@@ -13,7 +13,7 @@ from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL
 from helper_func import subscribed, encode, decode, get_messages
 from database.database import add_user, del_user, full_userbase, present_user
 async def delete_after_delay(message: Message, delay):
-    await asyncio.sleep(3600)
+    await asyncio.sleep(3600)  # change this value to change Auto delete time
     await message.delete()
 
 
@@ -87,7 +87,6 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
         await message.reply_text(f"<b>‼️ Forward the Files to Saved Messages or somewhere else before Downloading it.\n\nIt will get Delete after 1 Hour ‼️</b>")
-        await message.reply_text(f"<b>Join @Animes_Empire for More ⚡</b>")
         return
     else:
         reply_markup = InlineKeyboardMarkup(
@@ -128,11 +127,9 @@ async def not_joined(client: Client, message: Message):
     buttons = [
         [
             InlineKeyboardButton(text="⚡Join Channel 1⚡", url=client.invitelink),
-            InlineKeyboardButton(text="⚡Join Channel 2⚡", url=client.invitelink2),
         ],
         [
-            InlineKeyboardButton(text="⚡Join Channel 3⚡", url=client.invitelink3),
-            InlineKeyboardButton(text="⚡Join Channel 4⚡", url=client.invitelink4),
+            InlineKeyboardButton(text="⚡Join Channel 2⚡", url=client.invitelink2),
         ]
     ]
     try:
@@ -211,3 +208,4 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
         msg = await message.reply(REPLY_ERROR)
         await asyncio.sleep(8)
         await msg.delete()
+        
