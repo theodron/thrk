@@ -19,7 +19,13 @@ async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("Please Wait...!", quote=True)
 
     # Check if the user is an admin or a member of the required channels
-    is_admin = message.from_user.id in [admin.user.id for admin in await client.get_chat_administrators(CHANNEL_ID)]
+    try:
+        admins = await client.get_chat_administrators(CHANNEL_ID)
+        is_admin = message.from_user.id in [admin.user.id for admin in admins]
+    except Exception as e:
+        print(f"Error fetching administrators: {e}")
+        is_admin = False  # Default to not admin if there's an error
+
     if not is_admin:
         # Check membership in both channels
         is_member_1 = await is_user_member(client, message.from_user.id, FORCE_SUB_CHANNEL_1)
