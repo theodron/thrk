@@ -7,33 +7,33 @@ from bot import Bot
 from config import CHANNEL_ID, DISABLE_CHANNEL_BUTTON, FORCE_SUB_CHANNEL_1, FORCE_SUB_CHANNEL_2
 from helper_func import encode
 
-async def is_user_member(client: Client, user_id: int, channel_id: int) -> bool:
+async def check_membership(client: Client, user_id: int):
     try:
-        member = await client.get_chat_member(channel_id, user_id)
-        return member.status in ["member", "administrator", "creator"]
+        # Check membership in the first channel
+        member1 = await client.get_chat_member(FORCE_SUB_CHANNEL_1, user_id)
+        # Check membership in the second channel
+        member2 = await client.get_chat_member(FORCE_SUB_CHANNEL_2, user_id)
+        return member1.status in ["member", "administrator", "creator"] and member2.status in ["member", "administrator", "creator"]
     except UserNotParticipant:
+        return False
+    except Exception as e:
+        print(f"Error checking membership: {e}")
         return False
 
 @Bot.on_message(filters.private & ~filters.command(['start', 'users', 'broadcast', 'batch', 'genlink', 'stats']))
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("Please Wait...!", quote=True)
 
-    # Check if the user is an admin or a member of the required channels
-    try:
-        admins = await client.get_chat_administrators(CHANNEL_ID)
-        is_admin = message.from_user.id in [admin.user.id for admin in admins]
-    except Exception as e:
-        print(f"Error fetching administrators: {e}")
-        is_admin = False  # Default to not admin if there's an error
-
-    if not is_admin:
-        # Check membership in both channels
-        is_member_1 = await is_user_member(client, message.from_user.id, FORCE_SUB_CHANNEL_1)
-        is_member_2 = await is_user_member(client, message.from_user.id, FORCE_SUB_CHANNEL_2)
-
-        if not (is_member_1 and is_member_2):
-            await reply_text.edit_text("You must join the required channels to generate a link.")
-            return
+    # Check if the user is a member of the required channels
+    is_member = await check_membership(client, message.from_user.id)
+    if not is_member:
+        await reply_text.edit_text(
+            "You need to join the following channels to generate a link:\n"
+            f"- [Channel 1](https://t.me/{FORCE_SUB_CHANNEL_1})\n"
+            f"- [Channel 2](https://t.me/{FORCE_SUB_CHANNEL_2})\n"
+            "Please join them and try again."
+        )
+        return
 
     try:
         post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
