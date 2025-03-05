@@ -11,11 +11,11 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "about":
         await query.message.edit_text(
             text = f"╭───────────⍟
-├◈ <a>𝖬y 𝖭ᴀᴍᴇ</a> : <a href='https://t.me/Mrx369official_File_Share_Bot'>Mrx369officiall File Share Bot</a>\n
+├◈ <b>𝖬y 𝖭ᴀᴍᴇ</b> : <a href='https://t.me/Mrx369official_File_Share_Bot'>Mrx369officiall File Share Bot</a>\n
 ├◈ Sᴇᴄᴏɴᴅ Bᴏᴛ : ᴄᴏᴍɪɴɢ sᴏᴏɴ
-├◈ <a>Owner</a> : <a href='https://t.me/mrx369official_support_bot'>Mrx369official</a>\n
-├◈ <a>Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ</a> : <a href='https://t.me/+upoc5TQpjFJmZGZl'>All Bots - 369</a>\n
-├◈ <a>Bᴜɪʟᴅ Vᴇʀꜱɪᴏɴ</a> : <a href='https://t.me/+9tl-HUIJj2ExYTA9'>file share V3</a>\n
+├◈ <b>Owner</b> : <a href='https://t.me/mrx369official_support_bot'>Mrx369official</a>\n
+├◈ <b>Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ</b> : <a href='https://t.me/+upoc5TQpjFJmZGZl'>All Bots - 369</a>\n
+├◈ <b>Bᴜɪʟᴅ Vᴇʀꜱɪᴏɴ</b> : <a href='https://t.me/+9tl-HUIJj2ExYTA9'>file share V3</a>\n
 ╰───────────────⍟",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
