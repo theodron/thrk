@@ -19,10 +19,10 @@ APP_ID = int(os.environ.get("APP_ID", "28450765"))
 API_HASH = os.environ.get("API_HASH", "36f00f11f9d5c65e69b81fd804453a93")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002073793218"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002259290366"))
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "7533047591"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "6636180199"))
 
 #Port
 PORT = os.environ.get("PORT", "7070")
@@ -44,7 +44,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 START_PIC = os.environ.get("START_PIC", "https://files.catbox.moe/jqjnsi.jpg")
 
 #start message
-START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files in Specified Channel and other users can access it from special link.")
+START_MSG = os.environ.get("START_MESSAGE", "<b>Hᴇʟʟᴏ {first}\n\n𝖨 𝖠ᴍ ᴀ 𝖥ɪʟᴇ 𝖲ʜᴀʀᴇ 𝖡ᴏᴛ 𝖬ᴀɪɴᴛᴀɪɴᴇᴅ 𝖡ʏ : 369 𝖡ᴏᴛs✨\n• Update Channel: https://t.me/Content_Updates_369\n• Support Group: https://t.me/+XFTfRRjtdgswOTM1</b>")
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "").split()):
