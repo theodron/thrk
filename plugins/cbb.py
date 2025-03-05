@@ -11,7 +11,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "about":
         await query.message.edit_text(
             text = f"╭───────────⍟
-├◈ <a>𝖬y 𝖭ᴀᴍᴇ</a> : <a href='https://t.me/Mrx369official_File_Share_Bot'> {bot_name} </a>\n
+├◈ <a>𝖬y 𝖭ᴀᴍᴇ</a> : <a href='https://t.me/Mrx369official_File_Share_Bot'>Mrx369officiall File Share Bot</a>\n
 ├◈ Sᴇᴄᴏɴᴅ Bᴏᴛ : ᴄᴏᴍɪɴɢ sᴏᴏɴ
 ├◈ <a>Owner</a> : <a href='https://t.me/mrx369official_support_bot'>Mrx369official</a>\n
 ├◈ <a>Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ</a> : <a href='https://t.me/+upoc5TQpjFJmZGZl'>All Bots - 369</a>\n
