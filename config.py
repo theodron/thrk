@@ -41,7 +41,7 @@ FORCE_SUB_CHANNEL_4 = int(os.environ.get("FORCE_SUB_CHANNEL_4", "-1001559864888"
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 #pic
-START_PIC = os.environ.get("START_PIC", "https://files.catbox.moe/jqjnsi.jpg")
+START_PIC = os.environ.get("START_PIC", "https://envs.sh/s/zpxvZVz6OCXE1kswtoM8tw/E3b.jpg")
 
 #start message
 START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\n<b>I am file share bot by @Theodron. Send me any file and I'll give you a link and with that link anyone can access your file 🗃️</b>")
