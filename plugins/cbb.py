@@ -10,7 +10,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text = f"╭───────────⍟\n├◈ <a>𝖬y 𝖭ᴀᴍᴇ</a> : <a href='https://t.me/Mrx369official_File_Share_Bot'>𝖬ʀx369 𝖥ɪʟᴇ 𝖲ʜᴀʀᴇ 𝖡ᴏᴛ</a>\n├◈ Sᴇᴄᴏɴᴅ Bᴏᴛ : ᴄᴏᴍɪɴɢ sᴏᴏɴ\n├◈ <a>Owner</a> : <a href='https://t.me/mrx369official_support_bot'>Mrx369official</a>\n├◈ <a>Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ</a> : <a href='https://t.me/+upoc5TQpjFJmZGZl'>All Bots - 369</a>\n├◈ <a>Bᴜɪʟᴅ Vᴇʀꜱɪᴏɴ</a> : <a href='https://t.me/+9tl-HUIJj2ExYTA9'>file share V3</a>\n╰───────────────⍟",
+            text = f"<b>○ Devloper : <a href='https://t.me/HesAzazel'>𝖠ᴢᴀᴢᴇʟ</a>\n○ Source : <a href='https://t.me/Theodron'>Click here</a>\n○ Channel : @TheodronUpdates\n○ Support Group : @TheodronChat</b>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup(
                 [
