@@ -10,7 +10,7 @@ from logging.handlers import RotatingFileHandler
 
 
 #Bot token @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7782236845:AAEbUxxck_yBuXkZi7O6ETqPOOgvexVYU1U")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "8009397068:AAEP42Awa4HMt0QdqfWGIE1i-m4as5DQLrg")
 
 #Your API ID from my.telegram.org
 APP_ID = int(os.environ.get("APP_ID", "28450765"))
@@ -19,23 +19,23 @@ APP_ID = int(os.environ.get("APP_ID", "28450765"))
 API_HASH = os.environ.get("API_HASH", "36f00f11f9d5c65e69b81fd804453a93")
 
 #Your db channel Id
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002259290366"))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1002500369803"))
 
 #OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", "6636180199"))
+OWNER_ID = int(os.environ.get("OWNER_ID", "6061153252"))
 
 #Port
 PORT = os.environ.get("PORT", "7070")
 
 #Database 
 DB_URI = os.environ.get("DATABASE_URL", "mongodb+srv://paidtron:paidtron@fl4me.ucvbg.mongodb.net/?retryWrites=true&w=majority&appName=Fl4me")
-DB_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
+DB_NAME = os.environ.get("DATABASE_NAME", "thrkbot")
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL_1 = int(os.environ.get("FORCE_SUB_CHANNEL_1", "-1002164597795"))
-FORCE_SUB_CHANNEL_2 = int(os.environ.get("FORCE_SUB_CHANNEL_2", "-1002198414165"))
-FORCE_SUB_CHANNEL_3 = int(os.environ.get("FORCE_SUB_CHANNEL_3", "-1002211737945")) #don't remove 0 from here 😐
-FORCE_SUB_CHANNEL_4 = int(os.environ.get("FORCE_SUB_CHANNEL_4", "-1002304692243")) #don't remove 0 from here 😐
+FORCE_SUB_CHANNEL_1 = int(os.environ.get("FORCE_SUB_CHANNEL_1", "-1002659175005"))
+FORCE_SUB_CHANNEL_2 = int(os.environ.get("FORCE_SUB_CHANNEL_2", "-1002312778411"))
+FORCE_SUB_CHANNEL_3 = int(os.environ.get("FORCE_SUB_CHANNEL_3", "-1001952902939")) #don't remove 0 from here 😐
+FORCE_SUB_CHANNEL_4 = int(os.environ.get("FORCE_SUB_CHANNEL_4", "-1001559864888")) #don't remove 0 from here 😐
 
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
@@ -47,7 +47,7 @@ START_PIC = os.environ.get("START_PIC", "https://files.catbox.moe/jqjnsi.jpg")
 START_MSG = os.environ.get("START_MESSAGE", "<b>ʜᴇʟʟᴏ {first}\n\n     ɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱʜᴀʀᴇ ʙᴏᴛ. ᴘᴏᴡᴇʀᴇᴅ ʙʏ \n@Mrx369official_Dev369devil_Index\n╭─────────────────────────\nᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/+-66Rn1OysMYyYTI1'>369 ʙᴏᴛꜱ✨</a>\nꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ : <a href='https://t.me/+XFTfRRjtdgswOTM1'>369 ꜱᴜᴘᴘᴏʀᴛ✨</a>\n\nᴅᴇᴠɪʟ'ꜱ ᴄᴏᴍᴍᴜɴɪᴛʏ : <a href='https://t.me/addlist/E5In_fLSLyU0MjU1'>2.0</a>\nᴄᴏɴᴛᴇɴᴛ ᴜᴘᴅᴀᴛᴇꜱ : @Content_Updates_369\n╰─────────────────────────</b>")
 try:
     ADMINS=[]
-    for x in (os.environ.get("ADMINS", "").split()):
+    for x in (os.environ.get("ADMINS", "6122920987").split()):
         ADMINS.append(int(x))
 except ValueError:
         raise Exception("Your Admins list does not contain valid integers.")
@@ -59,7 +59,7 @@ FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "Hello {first}\n\n<b>You need to
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 
 #set True if you want to prevent users from forwarding files from bot
-PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
+PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "True") == "True" else False
 
 #Set true if you want Disable your Channel Posts Share button
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
@@ -68,7 +68,7 @@ BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
 USER_REPLY_TEXT = ""
 
 ADMINS.append(OWNER_ID)
-ADMINS.append(7533047591)
+ADMINS.append(6122920987)
 
 LOG_FILE_NAME = "filesharingbot.txt"
 
