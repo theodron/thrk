@@ -44,7 +44,7 @@ TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 START_PIC = os.environ.get("START_PIC", "https://files.catbox.moe/jqjnsi.jpg")
 
 #start message
-START_MSG = os.environ.get("START_MESSAGE", "<b>ʜᴇʟʟᴏ {first}\n\n     ɪ ᴀᴍ ᴀ ꜰɪʟᴇ ꜱʜᴀʀᴇ ʙᴏᴛ. ᴘᴏᴡᴇʀᴇᴅ ʙʏ \n@Mrx369official_Dev369devil_Index\n╭─────────────────────────\nᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ : <a href='https://t.me/+-66Rn1OysMYyYTI1'>369 ʙᴏᴛꜱ✨</a>\nꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ : <a href='https://t.me/+XFTfRRjtdgswOTM1'>369 ꜱᴜᴘᴘᴏʀᴛ✨</a>\n\nᴅᴇᴠɪʟ'ꜱ ᴄᴏᴍᴍᴜɴɪᴛʏ : <a href='https://t.me/addlist/E5In_fLSLyU0MjU1'>2.0</a>\nᴄᴏɴᴛᴇɴᴛ ᴜᴘᴅᴀᴛᴇꜱ : @Content_Updates_369\n╰─────────────────────────</b>")
+START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\n<b>I am file share bot by @Theodron. Send me any file and I'll give you a link and with that link anyone can access your file 🗃️</b>")
 try:
     ADMINS=[]
     for x in (os.environ.get("ADMINS", "6122920987").split()):
